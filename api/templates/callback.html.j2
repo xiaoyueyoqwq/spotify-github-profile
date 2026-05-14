@@ -5,6 +5,7 @@
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0" />
   <title>spotify-github-profile</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
   <!-- CSS  -->
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
@@ -92,7 +93,7 @@
             <span>Show Offline</span>
           </label>
         </div>
-        
+
         <div class="col s12 m3">
             <label  class="row">
               <input type="checkbox" class="filled-in" id="interchange" />
@@ -139,8 +140,8 @@
               <span>Automatic bar color</span>
             </label>
           </div>
-          
-          
+
+
         </div>
       </div>
 
@@ -196,7 +197,7 @@
         </div>
       </div>
 
-      
+
       <br><br>
 
     </div>
@@ -251,7 +252,7 @@
 
       exampleView.attr('src', viewUrlWithParams);
       markdownCodeTextArea.text(`[![spotify-github-profile](${viewUrlWithParams})](${url})`);
-      
+
       // Generate HTML code
       var htmlCode = `<p align="center">
   <a href="${url}">
@@ -340,7 +341,7 @@
       }
       updateUrl();
     });
- 
+
     $(document).ready(function(){
       $('#theme-select').formSelect();
       $('#mode-select').formSelect();

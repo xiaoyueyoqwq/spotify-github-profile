@@ -1,5 +1,11 @@
-from flask import Flask, redirect
 import importlib
+import os
+import sys
+
+from flask import Flask, redirect, send_from_directory
+
+# Ensure api/ directory is on sys.path so sibling modules resolve correctly
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 # Import legacy handlers (order matters for Firebase init)
 login_module = importlib.import_module("login")
@@ -12,6 +18,12 @@ view_handler = view_module.catch_all
 view_svg_handler = view_handler  # view.svg.py is identical to view.py
 
 app = Flask(__name__)
+
+
+@app.route("/favicon.ico")
+def favicon():
+    img_dir = os.path.join(os.path.dirname(os.path.abspath(__file__)), "..", "img")
+    return send_from_directory(img_dir, "favicon.ico", mimetype="image/x-icon")
 
 
 @app.route("/")
